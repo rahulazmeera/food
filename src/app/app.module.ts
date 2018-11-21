@@ -5,15 +5,22 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { CheckoutPage } from '../pages/checkout/checkout';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FoodtypePage } from '../pages/foodtype/foodtype';
+import { VegitemsPage } from '../pages/vegitems/vegitems';
+import { VegitemsProvider } from '../providers/vegitems/vegitems';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    FoodtypePage,
+    VegitemsPage,
+    CheckoutPage
   ],
   imports: [
     BrowserModule,
@@ -23,12 +30,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    FoodtypePage,
+    VegitemsPage,
+    CheckoutPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    VegitemsProvider
   ]
 })
 export class AppModule {}
