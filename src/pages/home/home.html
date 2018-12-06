@@ -7,14 +7,27 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content  padding>
+  <div class="container">
   <h3>Welcome Home</h3>
-   
-  <input type="Username">
-  <input type="Password">
+ 
+  <ion-avatar >
+    <img class="circle-pic"
+    src="https://avatars0.githubusercontent.com/u/22140233?s=400&u=1f65226090e62183d8090aacb2b868bc36e6690e&v=4">
+  </ion-avatar>
 
+
+    <div>
+      <input class="box" type="email" name="email" placeholder="E-mail">
+    </div>
+
+    <div>
+      <input class="box" type="password" name="pass" placeholder="Password">
+    </div>
   
-  <button ion-button (click)="onClickLogin()">Login/Signup</button>
 
+
+  <button class="lgbtn"  ion-button (click)="onClickLogin()">Login</button>
+</div>
 
 </ion-content>

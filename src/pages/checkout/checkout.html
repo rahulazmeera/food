@@ -13,6 +13,18 @@
 </ion-header>
 
 
+
+
 <ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let cartitem of cartitems">
+            {{this.cartitem.price}}
+        </ion-item>
+        
+         
+        
+        </ion-list>
+
+  <button ion-button (click)="finalize()" >finalize</button>
 
 </ion-content>

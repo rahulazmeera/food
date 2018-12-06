@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import {CheckoutPage} from '../checkout/checkout';
 
+import { VegitemsProvider } from '../../providers/vegitems/vegitems';
+
 /**
  * Generated class for the VegitemsPage page.
  *
@@ -17,26 +19,29 @@ import {CheckoutPage} from '../checkout/checkout';
 })
 export class VegitemsPage {
 
+  
 
 
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public VegitemsProvider: VegitemsProvider) {
     
   }
   
 
-
+  public cart:any[]=[];
+  public cartCount=0;
+  public price: any;
 
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VegitemsPage');
+    this.cartCount = this.VegitemsProvider.shopcart.length;
   }
 
-public cart:any[]=[];
-public cartCount=0;
-public price: any;
+
+
+
 
 
 
@@ -108,9 +113,13 @@ getIttems(){
   console.log(item.price);
   let a = {price: item.price};
   this.cart.push(a);
-  this.cartCount = this.cart.length;
+  this.VegitemsProvider.setCartItems(a)
+  this.cartCount = this.VegitemsProvider.shopcart.length;
    
  }
+
+
+
 
 
  PlaceOrder(){
@@ -120,6 +129,7 @@ getIttems(){
 
 
  checkoutpageOpen(){
+   
    this.navCtrl.push(CheckoutPage)
    console.log("checkout button is clicked")
  }

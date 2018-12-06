@@ -12,6 +12,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { FoodtypePage } from '../pages/foodtype/foodtype';
 import { VegitemsPage } from '../pages/vegitems/vegitems';
 import { VegitemsProvider } from '../providers/vegitems/vegitems';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { VegitemsProvider } from '../providers/vegitems/vegitems';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -38,8 +41,9 @@ import { VegitemsProvider } from '../providers/vegitems/vegitems';
   providers: [
     StatusBar,
     SplashScreen,
+    VegitemsProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    VegitemsProvider
+   
   ]
 })
 export class AppModule {}

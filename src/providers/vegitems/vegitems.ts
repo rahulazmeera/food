@@ -9,8 +9,10 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class VegitemsProvider {
+  public shopcart:any[]=[];
 
   constructor(public http: HttpClient) {
+   
     console.log('Hello VegitemsProvider Provider');
   }
 
@@ -24,6 +26,18 @@ getItems(){
  
  // this.http.get('http://localhost:3000').subscribe;
 
+}
+
+
+setCartItems(cartitems:any){
+
+this.shopcart.push(cartitems);
+
+}
+
+
+getCartItems(){
+  return this.shopcart;
 }
 
 
